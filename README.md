@@ -8,7 +8,7 @@ sudo make install
 
 git clone https://github.com/andvisk/nvim-config.git ~/.config/nvim
     
-Run `nvim` and execute `:PackerInstall` command to install the plugins.<br>
+Run `nvim` and execute `:PackerInstall` command to install the plugins.
 Exit 'nvim' and execute again `:PackerInstall` command
 `:TSUpdate`
 `:MasonInstall jdtls java-debug-adapter java-test lua-language-server`
@@ -23,5 +23,5 @@ Custom mappings -> ~/.config/nvim/lua/mappings.lua
 
 DAP config -> ~/.config/nvim/lua/plugins/configs/nvim-dap.lua
 
-Neovim debugging -> https://github.com/jbyuki/one-small-step-for-vimkind/blob/main/doc/osv.txt<br>
+Neovim debugging -> https://github.com/jbyuki/one-small-step-for-vimkind/blob/main/doc/osv.txt
 ```
