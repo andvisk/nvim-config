@@ -1,12 +1,12 @@
-# NVIM Configuration
-    ```
+# NVIM Configuration<br>
+```
 git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout release-0.8
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 
-git clone https://github.com/magidc/nvim-config.git ~/.config/nvim
+git clone https://github.com/andvisk/nvim-config.git ~/.config/nvim
     
 Run `nvim` and execute `:PackerInstall` command to install the plugins.<br>
 Exit 'nvim' and execute again `:PackerInstall` command
@@ -23,6 +23,5 @@ Custom mappings -> ~/.config/nvim/lua/mappings.lua
 
 DAP config -> ~/.config/nvim/lua/plugins/configs/nvim-dap.lua
 
-Neovim debugging -> https://github.com/jbyuki/one-small-step-for-vimkind/blob/main/doc/osv.txt
-
-    ```
+Neovim debugging -> https://github.com/jbyuki/one-small-step-for-vimkind/blob/main/doc/osv.txt<br>
+```
