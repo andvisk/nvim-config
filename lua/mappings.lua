@@ -17,6 +17,10 @@ local n_opts = {
 }
 
 wk.register({
+
+    ["<c-a>"] = { "<ESC>^", "Go to beginning of the line" },
+    ["<c-s>"] = { "<ESC>$", "Go to end of line" },
+
     ["<s-Up>"] = { "<cmd>resize +2<cr>", "[WINDOW] Make window taller" },
     ["<s-Down>"] = { "<cmd>resize -2<cr>", "[WINDOW] Make window shorter" },
     ["<s-Left>"] = { "<cmd>vertical resize -2<cr>", "[WINDOW] Make window narrower" },
@@ -109,5 +113,21 @@ wk.register({
     ["<s-j>"] = { ":m '>+1<cr>gv=gv", "[MOVE] Move block down" },
     ["<s-k>"] = { ":m '<-2<cr>gv=gv", "[MOVE] Move block up" },
 }, v_opts)
+
+local i_opts = {
+    mode = "i",
+    prefix = "",
+    silent = true,
+    noremap = true,
+    nowait = true,
+}
+wk.register({
+    ["<c-a>"] = { "<ESC>I", "Go to beginning of the line" },
+    ["<c-s>"] = { "<ESC>A", "Go to end of line" },
+    ["<c-w>"] = { "<ESC><Space>Wi", "Forward a word" },
+    ["<c-q>"] = { "<Esc>Bi", "Backward a word" },
+    ["<c-e>"] = { "<ESC>dbi", "Delete a word (backward)" },
+    ["<c-d>"] = { "<ESC>dwi", "Delete a word (forward)" },
+}, i_opts)
 
 wk.setup {}

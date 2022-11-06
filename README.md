@@ -25,3 +25,4 @@ DAP config -> ~/.config/nvim/lua/plugins/configs/nvim-dap.lua
 
 Neovim debugging -> https://github.com/jbyuki/one-small-step-for-vimkind/blob/main/doc/osv.txt
 ```
+
