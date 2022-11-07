@@ -38,7 +38,6 @@ wk.register({
     ["<leader>f"] = {
         name = "[TELESCOPE]",
         f = { "<cmd>Telescope find_files hidden=false no_ignore=true<cr>", "[TELESCOPE] Find File" },
-        s = { "<cmd>Telescope grep_string<cr>", "[TELESCOPE] Find files using grep in file names" },
         g = { "<cmd>Telescope live_grep<cr>", "[TELESCOPE] Find File by live grep (search content inside file)" },
         b = { "<cmd>Telescope buffers<cr>", "[TELESCOPE] Find buffers" },
         dc = { "<cmd>Telescope dap configurations<cr>", "[TELESCOPE DAP] Debug configurations" },
