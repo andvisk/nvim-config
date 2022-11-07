@@ -115,6 +115,25 @@ require("packer").startup(function(use)
 
     ---- Utilities
     -- use "lewis6991/impatient.nvim" -- Startup performance enhancer
+    
+    -- Debug
+    use {
+        "mfussenegger/nvim-dap",
+        config = require "plugins.configs.nvim-dap"
+    }
+    use {
+        "rcarriga/nvim-dap-ui",
+        config = require "plugins.configs.dapui"
+    }
+
+    -- neovim-lua debug
+    use "jbyuki/one-small-step-for-vimkind"
+
+    use {
+        "nvim-telescope/telescope-dap.nvim",
+        requires = { "andvisk/telescope.nvim", "mfussenegger/nvim-dap" },
+        config = require "plugins.configs.telescopedap"
+    }
 
     use {
         -- Search engine
@@ -149,7 +168,7 @@ require("packer").startup(function(use)
     use {
         -- Clipboard maanager
         "AckslD/nvim-neoclip.lua",
-        requires = "nvim-telescope/telescope.nvim",
+        requires = "andvisk/telescope.nvim",
         config = require "plugins.configs.neoclip"
     }
     use {
@@ -177,7 +196,7 @@ require("packer").startup(function(use)
     use {
         -- Project management
         "ahmedkhalf/project.nvim",
-        requires = "nvim-telescope/telescope.nvim",
+        requires = "andvisk/telescope.nvim",
         config = require "plugins.configs.project"
     }
     ---- Comments
@@ -206,25 +225,6 @@ require("packer").startup(function(use)
         requires = "nvim-lua/plenary.nvim"
     }
     use "mfussenegger/nvim-jdtls"
-
-    -- Debug
-    use {
-        "mfussenegger/nvim-dap",
-        config = require "plugins.configs.nvim-dap"
-    }
-    use {
-        "rcarriga/nvim-dap-ui",
-        config = require "plugins.configs.dapui"
-    }
-
-    -- neovim-lua debug
-    use "jbyuki/one-small-step-for-vimkind"
-
-    use {
-        "nvim-telescope/telescope-dap.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap" },
-        config = require "plugins.configs.telescopedap"
-    }
 
     use {
         "ggandor/leap.nvim",
