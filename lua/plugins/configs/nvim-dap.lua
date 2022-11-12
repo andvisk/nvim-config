@@ -11,7 +11,13 @@ dap.configurations.java = {
     name = "Debug (Attach) - Remote";
     hostName = "127.0.0.1";
     port = 5005;
-    --mainClass = "styledTextAreaFX.App";
+  },
+  {
+    type = 'java';
+    request = 'attach';
+    name = "Debug (Attach) - Remote, Wildfly";
+    hostName = "127.0.0.1";
+    port = 8787;
   }
 }
 

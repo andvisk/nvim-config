@@ -107,8 +107,8 @@ local v_opts = {
 wk.register({
     ["jk"] = { "<Esc>", "Normal mode switch" },
     ["p"] = { '"_dP', "Paste without replacing what is was in clipboard" },
-    ["<c-q>"] = { "iwob", "Select word backward" },
-    ["<c-w>"] = { "iww", "Select word forward" },
+    ["<c-q>"] = { "iwo", "Select word backward" },
+    ["<c-w>"] = { "iw", "Select word forward" },
     ["<"] = { "<gv", "[Indent] Indent left" },
     [">"] = { ">gv", "[Indent] Indent right" },
     ["<s-j>"] = { ":m '>+1<cr>gv=gv", "[MOVE] Move block down" },
