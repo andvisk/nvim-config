@@ -33,7 +33,7 @@ Run `nvim` and execute `:PackerInstall` command to install the plugins.
 Exit 'nvim' and execute again `:PackerInstall` command
 `:TSUpdate`
 `:PackerUpdate`
-`:MasonInstall jdtls java-debug-adapter java-test lua-language-server`
+`:MasonInstall jdtls java-debug-adapter java-test lua-language-server css-lsp html-lsp lemminx xmlformatter`
 
 
 Depending on OS -> ~/.config/nvim/lua/lsp/configs/jdtls.lua 

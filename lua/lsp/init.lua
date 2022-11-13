@@ -67,6 +67,13 @@ if _lspconfig then
     lspconfig.dockerls.setup {
         cmd = { LSP_ROOT_PATH .. "/dockerfile-language-server/node_modules/.bin/docker-langserver" };
     }
+    
+    -- HTML
+    lspconfig.lemminx.setup {
+        cmd = { LSP_ROOT_PATH .. "/lemminx/lemminx", "--stdio" };
+        filetypes = { "xml", "xsd", "xsl", "xslt", "svg", "xhtml" }
+    }
+
     -- HTML
     local html_root_path = LSP_ROOT_PATH .. "/html-lsp/node_modules/.bin"
     lspconfig.html.setup {
