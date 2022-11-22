@@ -50,6 +50,8 @@ wk.register({
     ["<f2>"] = { "<cmd>TroubleToggle<cr>", "[TROUBLE] Toggle" },
     ["<f3>"] = { "<cmd>AerialToggle<cr>", "[AERIAL] Toggle" },
     ["<f4>"] = { "<cmd>lua require'dapui'.toggle()<cr>", "[DAP UI] Toggle" },
+    ["<f5>"] = { "<cmd>DiffviewFileHistory --max-count=256<cr>", "GIT history" },
+    ["<f6>"] = { "<cmd>DiffviewOpen<cr>", "GIT changes" },
 
     ["<leader>d"] = {
         name = "[DAP debug]",
