@@ -40,6 +40,7 @@ Depending on OS -> ~/.config/nvim/lua/lsp/configs/jdtls.lua
 	find line: '-configuration', LSP_ROOT_PATH .. '/jdtls/config_mac'
 								     ^^^
 								     Change to one of `linux`, `win` or `mac`
+    init_options -> settings -> java -> configuration -> runtimes -> change name and path accordingly
 
 Custom mappings -> ~/.config/nvim/lua/mappings.lua
 

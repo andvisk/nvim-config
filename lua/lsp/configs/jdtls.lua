@@ -52,7 +52,7 @@ local config = {
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
         '-jar', LSP_ROOT_PATH .. '/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-        '-configuration', LSP_ROOT_PATH .. '/jdtls/config_mac',
+        '-configuration', LSP_ROOT_PATH .. '/jdtls/config_linux',
         '-data', workspace_dir
     },
     flags = {
@@ -60,12 +60,23 @@ local config = {
         allow_incremental_sync = true
     },
     --root_dir = require("jdtls.setup").find_root({"build.gradle", "pom.xml", ".git"}),
-    -- Using .metadata dir (Eclipse workspace) as reference for setting root dir
-    root_dir = jdtls.setup.find_root({ ".metadata", "pom.xml", ".git" }),
+    root_dir = jdtls.setup.find_root({ "build.gradle", ".git" }),
 
     on_init = on_init,
     init_options = {
-        bundles = bundles
+        bundles = bundles,
+        settings = {
+            java = {
+                configuration = {
+                    runtimes = {
+                        {
+                            name = 'JavaSE-19', -- name here matters - must be in `JavaSE-version>` format.
+                            path = '/usr/lib/jvm/jdk-19-oracle-x64'
+                        },
+                    };
+                };
+            };
+        };
     },
     capabilities = handlers.capabilities,
     on_attach = on_attach,
