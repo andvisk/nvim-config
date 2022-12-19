@@ -1,3 +1,6 @@
+package.path = package.path .. ";../utils.lua"
+local util = require 'utils'
+
 local function start_language_server(pattern, callback)
     vim.api.nvim_create_autocmd({ "FileType" }, {
         pattern = pattern,
@@ -26,6 +29,19 @@ end
 
 local _lspconfig, lspconfig = pcall(require, "lspconfig")
 if _lspconfig then
+
+    -- c++
+    local root_pattern = util.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
+    lspconfig.clangd.setup {
+        cmd = { LSP_ROOT_PATH .. "/clangd/clangd/bin/clangd", "--background-index" };
+        filetypes = { "c", "cpp", "objc", "objcpp" };
+        root_dir = function(fname)
+            local filename = util.path.is_absolute(fname) and fname
+                or util.path.join(vim.loop.cwd(), fname)
+            return root_pattern(filename) or util.path.dirname(filename)
+        end;
+    }
+
     -- Python
     lspconfig.pyright.setup {
         cmd = { LSP_ROOT_PATH .. "/pyright/node_modules/.bin/pyright-langserver", "--stdio" };
@@ -67,7 +83,7 @@ if _lspconfig then
     lspconfig.dockerls.setup {
         cmd = { LSP_ROOT_PATH .. "/dockerfile-language-server/node_modules/.bin/docker-langserver" };
     }
-    
+
     -- HTML
     lspconfig.lemminx.setup {
         cmd = { LSP_ROOT_PATH .. "/lemminx/lemminx", "--stdio" };
